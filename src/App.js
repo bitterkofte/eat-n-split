@@ -45,7 +45,7 @@ export default function App() {
       <div className='sidebar'>
         <FriendsList friends={friends} selectedFriend={selectedFriend} onSelection={selectionHandler} />
         {isFormVisible && <FormAddFriend setFriends={setFriends} />}
-        <MyButton onClick={() => setIsFormVisible((state) => !state)} >{isFormVisible ? 'Close' : 'Add New'}</MyButton>
+        <MyButton onClick={() => setIsFormVisible((state) => !state)} color={isFormVisible ? 'close' : ''} >{isFormVisible ? 'Close' : 'Add New'}</MyButton>
       </div>
 
       {selectedFriend && <FormSplitBill selectedFriend={selectedFriend} onSplitBill={updateAfterSubmit} />}
@@ -75,15 +75,15 @@ function Friend ({fr, onSelection, selectedFriend}) {
         fr.balance > 0 ? <p className='green'>{fr.name} owes you {Math.abs(fr.balance)}€</p> :
         <p className=''>You and {fr.name} are even</p>
       }
-      <MyButton onClick={() => onSelection(fr)}>
+      <MyButton color={isSelected ? "close" : ""} onClick={() => onSelection(fr)} >
         {isSelected ? "Close" : "Select"}
       </MyButton>
     </li>
   )
 }
 
-function MyButton ({children, onClick}) {
-  return <button className='button' onClick={onClick}>{children}</button>
+function MyButton ({children, onClick, color}) {
+  return <button className={'button ' + color} onClick={onClick}>{children}</button>
 }
 
 function FormAddFriend ({setFriends}) {

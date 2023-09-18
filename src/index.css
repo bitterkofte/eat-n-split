@@ -18,15 +18,16 @@ html {
 }
 
 body {
-  margin: 40px 0;
   min-height: 100vh;
   color: #495057;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: linear-gradient(31deg, #aaaaaa 0%, #ffffff 100%);
 }
 
 .app {
+  margin: 40px 0;
   min-height: 66vh;
   display: grid;
   grid-template-columns: 34rem 44rem;
@@ -43,6 +44,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  min-width: 64px;
 }
 
 .button:hover {
@@ -59,6 +61,7 @@ body {
   padding: 10px 15px;
   border-radius: 10px;
   background: linear-gradient(31deg, rgb(255, 215, 170) 0%, rgba(255,255,255,1) 100%);
+  box-shadow: 1px 1px 5px 3px #3636362a;
 }
 
 .sidebar li {
@@ -104,6 +107,13 @@ body {
   margin-right: 1.2rem;
 }
 
+.close {
+  background: #ff4517;
+}
+.close:hover {
+  background: #ff5a31;
+}
+
 .green {
   color: #66a80f;
 }
@@ -126,6 +136,8 @@ form {
   grid-template-columns: 1fr 1.5fr;
   margin-bottom: 1.6rem;
   padding: 1.2rem;
+  background: linear-gradient(329deg, #ffffff 0%, #ffd7aa 100%);
+  box-shadow: 1px 1px 5px 3px #3636362a;
 }
 .form-split-bill {
   grid-template-columns: 1fr 12rem;
